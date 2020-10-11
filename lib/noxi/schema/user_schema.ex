@@ -11,7 +11,7 @@ defmodule Noxi.UserSchema do
 
   def changeset(changeset, params \\ %{}) do
     changeset
-    |> cast(params, [:name, :integer, :email])
+    |> cast(params, [:name, :integer, :credits, :email])
     |> unique_constraint(:email)
   end
 end

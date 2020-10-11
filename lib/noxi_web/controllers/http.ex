@@ -4,7 +4,6 @@ defmodule NoxiWeb.Routes do
       @doc false
       def index(var!(conn), params = %{"page" => page, "page_size" => page_size}) do
         list = unquote(model).index(unquote(model).get_schema(), params)
-
         var!(conn)
         |> put_status(:ok)
         |> render("index.json", list: list)

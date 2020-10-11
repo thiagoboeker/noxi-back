@@ -67,5 +67,11 @@ defmodule NoxiWeb.UserTest do
       |> auth(email)
       |> post("/api/user/points", %{"param" => payment})
       |> json_response(200)
+
+    build_conn()
+    |> auth(email)
+    |> get("/api/user/products?page=1&page_size=100")
+    |> json_response(200)
+    |> IO.inspect
   end
 end

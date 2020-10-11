@@ -17,6 +17,8 @@ defmodule NoxiWeb.Router do
       get "/", UserController, :get_user
       post "/tokenize_cc", UserController, :tokenize_cc
       post "/points", UserController, :points
+      get "/products", ProductController, :index
+      get "/companys", CompanyController, :index
     end
   end
 end

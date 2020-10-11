@@ -5,7 +5,8 @@ defmodule NoxiWeb.UserView do
     %{
       id: item.id,
       name: item.name,
-      email: item.email
+      email: item.email,
+      credits: item.credits
     }
   end
 end

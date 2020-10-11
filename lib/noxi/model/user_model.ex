@@ -7,6 +7,7 @@ defmodule Noxi.UserModel do
 
   def create(%{"email" => email, "password" => password} = params) do
     with {:ok, %{status_code: 200}} <- Firebase.create_user(%{email: email, password: password}) do
+      params = Map.put(params, "credits", 100000000)
       %UserSchema{}
       |> UserSchema.changeset(params)
       |> Repo.insert()

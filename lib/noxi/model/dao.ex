@@ -30,7 +30,6 @@ defmodule Noxi.DAO do
       {:ok, filters}
     else
       v ->
-        IO.inspect v 
         {:error, :invalid_parameters}
     end
   end
